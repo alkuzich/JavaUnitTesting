@@ -26,7 +26,6 @@ public class ShoppingCartTest {
         Product product = new Product();
         products.add(product);
         ShoppingCart shoppingCart = new ShoppingCart(products);
-        shoppingCart.addProductToCart(product);
         assertThat(shoppingCart.getProducts()).contains(product);
     }
 
@@ -37,6 +36,7 @@ public class ShoppingCartTest {
         shoppingCart.addProductToCart(product);
         shoppingCart.removeProductFromCart(product);
         assertThat(shoppingCart.getProducts()).doesNotContain(product);
+        assertThat(shoppingCart.getProducts()).isEmpty();
     }
 
     @Test
